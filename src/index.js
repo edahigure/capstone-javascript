@@ -12,8 +12,17 @@ window.onload = () => {
   const btnsLoadCategory = document.querySelectorAll('.btnsLoadCategory');
   btnsLoadCategory.forEach((btnLoadCategory) => {
     btnLoadCategory.addEventListener('click', () => {
+      // disable buttons while loading meals
+      btnsLoadCategory.forEach((btn) => {
+        btn.disabled = true;
+      });
       const category = btnLoadCategory.textContent;
-      categories.load(category);
+      categories.load(category).finally(() => {
+        // enable buttons after loading meals
+        btnsLoadCategory.forEach((btn) => {
+          btn.disabled = false;
+        });
+      });
     });
   });
 };

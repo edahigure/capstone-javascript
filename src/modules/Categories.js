@@ -11,21 +11,30 @@ export default class Categories {
   }
 
   load(name) {
-    const added = this.categories.find((cat) => cat.name === name);
-    const isAdded = added !== undefined;
-    if (isAdded) {
-      this.displayMeals(added.meals, name);
-      this.changeCurrentButton(name);
-      this.currentCategory = name;
-      return;
-    }
+    return new Promise((resolve, reject) => {
+      const added = this.categories.find((cat) => cat.name === name);
+      const isAdded = added !== undefined;
+      if (isAdded) {
+        this.displayMeals(added.meals, name);
+        this.changeCurrentButton(name);
+        this.currentCategory = name;
+        resolve();
+        return;
+      }
 
-    const category = new Category(name);
-    category.getRecipees().then((meals) => {
-      this.categories.push(category);
-      this.displayMeals(meals, name);
-      this.changeCurrentButton(name);
-      this.currentCategory = name;
+      const category = new Category(name);
+      category
+        .getRecipees()
+        .then((meals) => {
+          this.categories.push(category);
+          this.displayMeals(meals, name);
+          this.changeCurrentButton(name);
+          this.currentCategory = name;
+          resolve();
+        })
+        .catch((err) => {
+          reject(err);
+        });
     });
   }
 
