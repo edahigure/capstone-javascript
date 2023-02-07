@@ -17,3 +17,12 @@ body {
   transform: translate(3px, 3px);
   box-shadow: none;
 }
+
+button > span {
+  pointer-events: none;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+}

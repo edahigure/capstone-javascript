@@ -7,6 +7,10 @@ window.onload = () => {
   const popupComments = document.getElementById('popupComments');
   const categories = new Categories(meals, buttons, popupComments);
 
+  popupComments.querySelector('#btnClosePopup').addEventListener('click', () => {
+    popupComments.close();
+  });
+
   categories.load('Miscellaneous'); // category to load by default
 
   const btnsLoadCategory = document.querySelectorAll('.btnsLoadCategory');
