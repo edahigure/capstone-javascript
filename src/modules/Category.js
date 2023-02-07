@@ -4,7 +4,7 @@ export default class Category {
     this.meals = [];
   }
 
-  getRecipees() {
+  getMeals() {
     return new Promise((resolve, reject) => {
       fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.name}`)
         .then((res) => res.json())

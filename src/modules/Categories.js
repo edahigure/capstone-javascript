@@ -24,7 +24,7 @@ export default class Categories {
 
       const category = new Category(name);
       category
-        .getRecipees()
+        .getMeals()
         .then((meals) => {
           this.categories.push(category);
           this.displayMeals(meals, name);
@@ -39,7 +39,6 @@ export default class Categories {
   }
 
   displayPopupComments(mealId) {
-    console.log(mealId);
     this.popupComments.showModal();
   }
 
