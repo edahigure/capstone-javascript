@@ -14,7 +14,7 @@ export default class Meal {
         <p>${this.name.length > 30 ? `${this.name.slice(0, 27)}...` : this.name}</p>
         <button class="meal__like">
           <span class="material-symbols-outlined"> favorite </span>
-          <span>2 likes</span>
+          <span>0 likes</span>
         </button>
       </div>
       <button class="button">Comments</button>
