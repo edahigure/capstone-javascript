@@ -11,6 +11,23 @@
     />
   </head>
   <body>
-    <h1>JavaScript Capstone</h1>
+    <header class="header">
+      <span class="material-symbols-outlined"> fastfood </span>
+      <nav>
+        <ul class="menu__categories" id="listCategories">
+          <li><button class="btnsLoadCategory menu__btn menu__btn--current">Miscellaneous</button></li>
+          <li><button class="btnsLoadCategory menu__btn">Pasta</button></li>
+          <li><button class="btnsLoadCategory menu__btn">Vegetarian</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="meals" id="meals"></section>
+    </main>
+
+    <dialog id="popupComments">
+      <h2>Popup comments</h2>
+    </dialog>
   </body>
 </html>
