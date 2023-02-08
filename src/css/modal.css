@@ -2,6 +2,9 @@
   max-width: 768px;
   width: 100%;
   margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .popup__close {
@@ -11,14 +14,13 @@
 }
 
 #popupImage {
-  width: 100%;
+  width: 70%;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
 }
 
 .comments-container {
@@ -28,4 +30,14 @@
 .ingredient-container {
   list-style: none;
   padding-left: 0;
+}
+
+.instructions{
+  width: 70%;
+}
+
+.input-section{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
