@@ -10,3 +10,23 @@
   display: flex;
   align-items: center;
 }
+
+#popupImage{
+   width: 100%;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.comments-container {
+  list-style: none;
+}
+
+.ingredient-container{
+  list-style: none;
+}
