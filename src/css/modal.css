@@ -5,16 +5,14 @@
 }
 
 .popup__close {
-  display: block;
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-#popupImage{
-   width: 100%;
+#popupImage {
+  width: 100%;
 }
-
 
 .grid-container {
   display: grid;
@@ -27,6 +25,7 @@
   list-style: none;
 }
 
-.ingredient-container{
+.ingredient-container {
   list-style: none;
+  padding-left: 0;
 }

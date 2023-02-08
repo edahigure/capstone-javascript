@@ -3,13 +3,14 @@ import Meal from './Meal.js';
 
 export default class Categories {
   myId;
+
   constructor(container, buttons, popupComments) {
     this.container = container;
     this.buttons = buttons;
     this.popupComments = popupComments;
     this.categories = [];
     this.currentCategory = '';
-    this.myId = "NJoITshHrkNNBBBobyAA";
+    this.myId = 'NJoITshHrkNNBBBobyAA';
   }
 
   load(name) {
@@ -40,7 +41,6 @@ export default class Categories {
     });
   }
 
-
   getComments = async (id) => {
     const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.myId}/comments?item_id=${id}`;
     const result = await fetch(url, {
@@ -50,11 +50,10 @@ export default class Categories {
       },
     });
     return result;
-
   };
 
   initApp = async () => {
-    const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/`;
+    const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
     const result = await fetch(url, {
       method: 'POST',
       headers: {
@@ -62,9 +61,7 @@ export default class Categories {
       },
     });
 
-    result.then((res) => { res.text().then((a) => console.log(a)) });
-
-
+    result.then((res) => { res.text().then((a) => console.log(a)); });
   };
 
   addComment = async (item_id, name, comment) => {
@@ -74,9 +71,9 @@ export default class Categories {
       method: 'POST',
       body: JSON.stringify(
         {
-          "item_id": item_id,
-          "username": name,
-          "comment": comment
+          item_id,
+          username: name,
+          comment,
         },
       ),
       headers: {
@@ -84,7 +81,7 @@ export default class Categories {
       },
     });
 
-    const promise1 = result.then((res) => { res.text().then((a) => console.log(a)) });
+    const promise1 = result.then((res) => { res.text().then((a) => console.log(a)); });
     await promise1;
   }
 
@@ -93,22 +90,20 @@ export default class Categories {
       res.json().then((data) => {
         console.log('data length', data.length);
         const commentsTitle = this.popupComments.querySelector('.comments-title');
-        commentsTitle.innerHTML = 'Commments (' + data.length + ')';
+        commentsTitle.innerHTML = `Commments (${data.length})`;
         const commentsContainer = this.popupComments.querySelector('.comments-container');
-        commentsContainer.innerHTML='';
+        commentsContainer.innerHTML = '';
         let newData;
         for (let i = 0; i < data.length; i += 1) {
           newData = document.createElement('li');
-          newData.innerHTML = `${data[i]['creation_date']} ${data[i]['username']}: ${data[i]['comment']}`;
+          newData.innerHTML = `${data[i].creation_date} ${data[i].username}: ${data[i].comment}`;
           commentsContainer.appendChild(newData);
         }
-      })
+      });
     });
   }
 
-
   getItemApiMain = async (mealId) => {
-
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
     const result = fetch(url);
 
@@ -116,32 +111,31 @@ export default class Categories {
       console.log(json.meals[0]);
 
       const popupImg = this.popupComments.querySelector('#popupImage');
-      popupImg.src = json.meals[0]['strMealThumb'];
+      popupImg.src = json.meals[0].strMealThumb;
 
       const popupTitle = this.popupComments.querySelector('#popupTitle');
-      popupTitle.innerHTML = json.meals[0]['strMeal'];
+      popupTitle.innerHTML = json.meals[0].strMeal;
 
       const gridContainer = this.popupComments.querySelector('.grid-container');
-      gridContainer.innerHTML='';
+      gridContainer.innerHTML = '';
       let newData = document.createElement('div');
-      newData.innerHTML = 'Area:' + json.meals[0]['strArea'];
+      newData.innerHTML = `Area:${json.meals[0].strArea}`;
       gridContainer.appendChild(newData);
 
       newData = document.createElement('div');
-      newData.innerHTML = 'Category:' + json.meals[0]['strCategory'];
+      newData.innerHTML = `Category:${json.meals[0].strCategory}`;
       gridContainer.appendChild(newData);
 
-
       const ingredientContainer = this.popupComments.querySelector('.ingredient-container');
-      ingredientContainer.innerHTML='';
+      ingredientContainer.innerHTML = '';
 
       newData = document.createElement('li');
       newData.innerHTML = 'Ingredients:';
       ingredientContainer.appendChild(newData);
 
-      let strIngredient = [];
+      const strIngredient = [];
       for (let i = 1; i <= 20; i += 1) {
-        strIngredient[i] = json.meals[0]['strIngredient' + i.toString()];
+        strIngredient[i] = json.meals[0][`strIngredient${i.toString()}`];
         if (strIngredient[i] === '') { break; }
         newData = document.createElement('li');
         newData.innerHTML = strIngredient[i];
@@ -150,11 +144,9 @@ export default class Categories {
 
       const comments = this.getComments(mealId);
       this.printComments(comments);
-
     });
 
     await promise1;
-
   };
 
   displayPopupComments(mealId) {
@@ -171,9 +163,6 @@ export default class Categories {
       form.reset();
       this.getItemApiMain(mealId);
     });
-
-
-
   }
 
   displayMeals(meals, name) {
