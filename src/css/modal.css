@@ -5,7 +5,6 @@
 }
 
 .popup__close {
-  display: block;
   margin-left: auto;
   display: flex;
   align-items: center;
