@@ -20,3 +20,13 @@
   background: none;
   border: none;
 }
+
+.meal__like > span:first-child {
+  color: black;
+  transition: color 250ms ease-in-out;
+}
+
+.meal__like:active > span:first-child {
+  transform: scale(0.9);
+  color: #ee6352;
+}
