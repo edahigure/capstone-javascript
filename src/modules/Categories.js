@@ -3,9 +3,6 @@ import Meal from './Meal.js';
 
 export default class Categories {
   myId;
-
-  numComments;
-
   myMealId;
 
   constructor(container, buttons, popupComments) {
