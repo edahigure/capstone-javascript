@@ -6,6 +6,7 @@ export default class Categories {
   constructor(container, buttons, popupComments) {
     this.container = container;
     this.buttons = buttons;
+    this.mealsAmount = this.buttons.querySelector('#mealsAmount');
     this.popupComments = popupComments;
     this.categories = [];
     this.currentCategory = '';
@@ -73,6 +74,7 @@ export default class Categories {
 
   displayMeals(meals, name) {
     if (name === this.currentCategory) return; // If category is already showing
+    this.mealsAmount.textContent = `(${meals.length})`;
     this.container.replaceChildren(); // Clear container
     const fragment = document.createDocumentFragment();
     meals.forEach((meal) => {
@@ -109,8 +111,10 @@ export default class Categories {
     if (name === this.currentCategory) return; // If category is already showing
     [...this.buttons.children].forEach((li) => {
       const button = li.firstElementChild;
-      if (button.textContent === name) button.classList.add('menu__btn--current');
-      else button.classList.remove('menu__btn--current');
+      if (button.textContent === name) {
+        button.classList.add('menu__btn--current');
+        li.appendChild(this.mealsAmount);
+      } else button.classList.remove('menu__btn--current');
     });
   }
 }
