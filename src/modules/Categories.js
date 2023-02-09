@@ -227,6 +227,9 @@ export default class Categories {
     document.querySelector('.popup').style.display = 'flex';
 
     await this.getItemApiMain(mealId);
+
+    // const comments = this.getComments(mealId);
+    //  this.getNumComments(comments).then((num) => console.log('num of comments', num));
     this.popupComments.showModal();
   }
 
