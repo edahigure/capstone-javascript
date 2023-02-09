@@ -72,9 +72,13 @@ export default class Categories {
     });
   }
 
+  showAmount(meals) {
+    this.mealsAmount.textContent = `(${meals.length})`;
+  }
+
   displayMeals(meals, name) {
     if (name === this.currentCategory) return; // If category is already showing
-    this.mealsAmount.textContent = `(${meals.length})`;
+    this.showAmount(meals);
     this.container.replaceChildren(); // Clear container
     const fragment = document.createDocumentFragment();
     meals.forEach((meal) => {
