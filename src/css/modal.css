@@ -39,5 +39,20 @@
 .input-section{
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: 70%;
+  gap: 24px;
+}
+
+.wrapper-popup{
+  display: none;
+}
+
+#add-button {
+  display: block;
+  width: 100%;
+  padding: 0.3rem 0.6rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px 0 0 black;
+  transition: transform 100ms ease, box-shadow 100ms ease;
 }
