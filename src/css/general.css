@@ -26,3 +26,17 @@ button > span {
   background: none;
   border: none;
 }
+
+.center {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.mt-2rem {
+  margin-top: 2rem;
+}
+
+.bt-2px {
+  border-top: 2px solid black;
+}

@@ -12,9 +12,9 @@ export default class Meal {
       <img src="${this.img}" alt="${this.name}" />
       <div class="meal__headline">
         <p>${this.name.length > 30 ? `${this.name.slice(0, 27)}...` : this.name}</p>
-        <button class="meal__like">
+        <button class="meal__like btnLike">
           <span class="material-symbols-outlined"> favorite </span>
-          <span>0 likes</span>
+          <span><span class="likesAmount">0</span> likes</span>
         </button>
       </div>
       <button class="button">Comments</button>
