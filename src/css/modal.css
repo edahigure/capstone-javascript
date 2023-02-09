@@ -1,0 +1,11 @@
+.popup {
+  max-width: 768px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.popup__close {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}

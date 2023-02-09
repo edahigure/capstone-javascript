@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.menu__categories {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.menu__btn {
+  background: none;
+  border: none;
+}
+
+.menu__btn--current {
+  font-weight: 800;
+}
