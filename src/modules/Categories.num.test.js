@@ -30,17 +30,17 @@ const buttons = document.getElementById('listCategories');
 const popupComments = document.getElementById('popupComments');
 
 const getComments = () => new Promise((resolve) => {
-    const data = [{ username: 'Callaloo', creation_date: '2023-02-09', comment: '1' },
+  const data = [{ username: 'Callaloo', creation_date: '2023-02-09', comment: '1' },
     { username: 'Callaloo', comment: '2', creation_date: '2023-02-09' },
     { comment: '3', username: 'Callaloo', creation_date: '2023-02-09' },
     { creation_date: '2023-02-09', username: 'Callaloo', comment: '4' }];
-    resolve(data);
+  resolve(data);
 });
 
 const categories = new Categories(meals, buttons, popupComments);
 
 test(' Count number of comments ', () => {
-    categories.getNumComments(getComments()).then((num) => {
-        expect(num).toBe(4);
-    });
+  categories.getNumComments(getComments()).then((num) => {
+    expect(num).toBe(4);
+  });
 });
