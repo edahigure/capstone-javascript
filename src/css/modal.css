@@ -2,7 +2,7 @@
   max-width: 768px;
   width: 100%;
   margin: 1rem auto;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
@@ -32,11 +32,11 @@
   padding-left: 0;
 }
 
-.instructions{
+.instructions {
   width: 70%;
 }
 
-.input-section{
+.input-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -44,7 +44,7 @@
   gap: 24px;
 }
 
-.wrapper-popup{
+.wrapper-popup {
   display: none;
 }
 

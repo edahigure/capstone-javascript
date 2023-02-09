@@ -8,6 +8,7 @@ window.onload = () => {
   const categories = new Categories(meals, buttons, popupComments);
 
   popupComments.querySelector('#btnClosePopup').addEventListener('click', () => {
+    document.querySelector('.popup').style.display = 'none';
     popupComments.close();
   });
 
