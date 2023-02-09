@@ -222,7 +222,6 @@ export default class Categories {
     // this.initApp().then((id) => console.log(id));
     // return;
     document.querySelector('.popup').style.display = 'flex';
-
     await this.getItemApiMain(mealId);
 
     // const comments = this.getComments(mealId);
