@@ -139,6 +139,10 @@ export default class Categories {
     });
   }
 
+  getNumComments = async (comments) => {
+    
+  }
+
   getItemApiMain = async (mealId) => {
 
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
