@@ -7,6 +7,7 @@ describe('Homepage meals counter tests', () => {
       <span id="mealsAmount"></span>
     </ul>
     <dialog id="popupComments">
+      <input type="button" id="add-button" value="Comment">
     </dialog>
   `;
   const meals = [
