@@ -68,6 +68,8 @@
 Not deployed yet.
 - [https://jorgeabrahan.github.io/](https://github.com/jorgeabrahan)
 
+- [Project video](https://drive.google.com/file/d/1MoYiEN-Xxw8yVSEpoE8i8q3UdcOWIeqg/view)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
