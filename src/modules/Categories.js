@@ -21,27 +21,34 @@ export default class Categories {
   }
 
   initEventAddButton = () => {
+
     const addButton = document.querySelector('#add-button');
     const form = document.querySelector('.input-section');
     addButton.addEventListener('click', async () => {
+      
       const user = document.querySelector('.user').value;
       const comment = document.querySelector('.comment').value;
-      await this.addComment(this.myMealId, user, comment);
-      const comments = this.getComments(this.myMealId);
-      comments.then((data) => {
-        if (data !== undefined) {
-          const commentsTitle = this.popupComments.querySelector('.comments-title');
-          commentsTitle.innerHTML = `Commments (${data.length})`;
+      if (user !== '' && comment !== '') {
+        await this.addComment(this.myMealId, user, comment);
+        const comments = this.getComments(this.myMealId);
+        comments.then((data) => {
+          if (data !== undefined) {
+            const commentsTitle = this.popupComments.querySelector('.comments-title');
+            commentsTitle.innerHTML = `Commments (${data.length})`;
 
-          const commentsContainer = this.popupComments.querySelector('.comments-container');
+            const commentsContainer = this.popupComments.querySelector('.comments-container');
 
-          const newData = document.createElement('li');
+            const newData = document.createElement('li');
 
-          newData.innerHTML = `${data[data.length - 1].creation_date} ${user}: ${comment}`;
-          commentsContainer.appendChild(newData);
-        }
-      });
-      form.reset();
+            newData.innerHTML = `${data[data.length - 1].creation_date} ${user}: ${comment}`;
+            commentsContainer.appendChild(newData);
+          }
+        });
+        form.reset();
+        document.querySelector('.msg').style.display='none';
+      }else{
+        document.querySelector('.msg').style.display='block';
+      }
     });
   }
 

@@ -8,7 +8,9 @@ window.onload = () => {
   const categories = new Categories(meals, buttons, popupComments);
 
   popupComments.querySelector('#btnClosePopup').addEventListener('click', () => {
+    document.querySelector('.popup').style.display = 'none';
     popupComments.close();
+
   });
 
   categories.load('Miscellaneous'); // category to load by default

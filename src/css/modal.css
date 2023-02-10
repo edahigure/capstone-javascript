@@ -55,3 +55,7 @@
   box-shadow: 3px 3px 0 0 black;
   transition: transform 100ms ease, box-shadow 100ms ease;
 }
+
+.msg{
+  display: none;
+}
