@@ -56,6 +56,6 @@
   transition: transform 100ms ease, box-shadow 100ms ease;
 }
 
-.msg{
+.msg {
   display: none;
 }

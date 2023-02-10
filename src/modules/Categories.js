@@ -21,11 +21,9 @@ export default class Categories {
   }
 
   initEventAddButton = () => {
-
     const addButton = document.querySelector('#add-button');
     const form = document.querySelector('.input-section');
     addButton.addEventListener('click', async () => {
-      
       const user = document.querySelector('.user').value;
       const comment = document.querySelector('.comment').value;
       if (user !== '' && comment !== '') {
@@ -45,9 +43,9 @@ export default class Categories {
           }
         });
         form.reset();
-        document.querySelector('.msg').style.display='none';
-      }else{
-        document.querySelector('.msg').style.display='block';
+        document.querySelector('.msg').style.display = 'none';
+      } else {
+        document.querySelector('.msg').style.display = 'block';
       }
     });
   }
