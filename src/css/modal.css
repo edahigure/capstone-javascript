@@ -1,0 +1,61 @@
+.popup {
+  max-width: 768px;
+  width: 100%;
+  margin: 1rem auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup__close {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#popupImage {
+  width: 70%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.comments-container {
+  list-style: none;
+}
+
+.ingredient-container {
+  list-style: none;
+  padding-left: 0;
+}
+
+.instructions {
+  width: 70%;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  gap: 24px;
+}
+
+.wrapper-popup {
+  display: none;
+}
+
+#add-button {
+  display: block;
+  width: 100%;
+  padding: 0.3rem 0.6rem;
+  border: 3px solid black;
+  box-shadow: 3px 3px 0 0 black;
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+.msg {
+  display: none;
+}

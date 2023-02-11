@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Capstone</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <header class="header">
+    <span class="material-symbols-outlined"> fastfood </span>
+    <nav>
+      <ul class="menu__categories" id="listCategories">
+        <li><button class="btnsLoadCategory menu__btn menu__btn--current">Miscellaneous</button><span id="mealsAmount"></span></li>
+        <li><button class="btnsLoadCategory menu__btn">Pasta</button></li>
+        <li><button class="btnsLoadCategory menu__btn">Vegetarian</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="meals" id="meals"></section>
+  </main>
+  
+  <footer class="center mt-2rem bt-2px">
+      <p>Created by Microverse under CC License</p>
+  </footer>
+
+  <dialog class="popup" id="popupComments">
+    <button id="btnClosePopup" class="icon-btn popup__close">
+      <span class="material-symbols-outlined"> close </span>
+    </button>
+    <img src="" alt="" id="popupImage" />
+    <h2 id="popupTitle"></h2>
+    <div class="grid-container">
+    </div>
+    <h2>Recipe</h2>
+    <p class="instructions"></p>
+    <h2 class="comments-title"></h2>
+    <ul class='comments-container'>
+    </ul>
+    <form class="input-section">
+      <div>  <h2>Add a comment </h2>   <div class="msg"> Please fill all fields </div> </div>
+      <input type="text" placeholder="Your name" class="user" size="25" required>
+      <input type="text" placeholder="Your insights" class="comment" size="50" required>
+      <input type="button" id="add-button" value="Comment">
+   
+    </form>
+  </dialog>
+</body>
+
+</html>
