@@ -65,8 +65,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Not deployed yet.
-- [https://jorgeabrahan.github.io/](https://github.com/jorgeabrahan)
+
+- [live demo](https://cook-recipes-2.onrender.com/)
 
 - [Project video](https://drive.google.com/file/d/1MoYiEN-Xxw8yVSEpoE8i8q3UdcOWIeqg/view)
 
@@ -166,7 +166,7 @@ If you like this project you can just cheer me up with a comment 🙂!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-No acknowledgments needed so far.
+We thank microverse for asign us this wonderful excersise to learn async functions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
